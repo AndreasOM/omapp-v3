@@ -4,6 +4,8 @@
 
 namespace OM
 {
+	class Gamepad;
+
 	class OmAppV3 : public Application
 	{
 // :TODO:
@@ -19,3 +21,5 @@ namespace OM
 		bool	update( double timeStep ) override;
 		void	render( ) override;
 	};
+
+}
