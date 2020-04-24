@@ -1,7 +1,7 @@
 
 #import "AppDelegate.h"
 
-#include "App/appdefinition.hpp"
+#include "appdefinition.hpp"
 
 // :TODO: wrap
 
@@ -12,7 +12,7 @@
 
 // :TODO: extract into platform callbacks
 #include "ads/AdManager.hpp"
-#include "ios/ads/AdModuleChartboostIos.h"
+//#include "ios/ads/AdModuleChartboostIos.h"
 #include "TrackingManager.h"
 //#include "TrackingModuleFlurryIos.h"
 
@@ -40,9 +40,9 @@
 
 	OM::g_pAdManager = new OM::AdManager;
 	OM::g_pAdManager->initialize();
-	OM::AdModuleChartboostIos* pChartboost = new OM::AdModuleChartboostIos;
-	pChartboost->initialize();
-	OM::g_pAdManager->registerAdModule( pChartboost );	// :TODO: :RELEASE: reenable ads
+//	OM::AdModuleChartboostIos* pChartboost = new OM::AdModuleChartboostIos;
+//	pChartboost->initialize();
+//	OM::g_pAdManager->registerAdModule( pChartboost );	// :TODO: :RELEASE: reenable ads
 
 	OM::g_pTrackingManager = new OM::TrackingManager;
 	OM::g_pTrackingManager->initialize();
