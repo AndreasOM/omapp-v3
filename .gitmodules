@@ -7,3 +7,6 @@
 [submodule "omgame-v3"]
 	path = omgame-v3
 	url = git@gitlab2.dev.omni-mad.org:omni-mad/omgame-v3.git
+[submodule "other"]
+	path = other
+	url = git@gitlab2.dev.omni-mad.org:omni-mad/other.git
