@@ -1,6 +1,7 @@
 #include "omlib-v3/config/omlib-v3-Config.xcconfig"
 #include "omgfx-v3/config/omgfx-v3-Config.xcconfig"
 #include "omgame-v3/config/omgame-v3-config.xcconfig"
+#include "other/other.xcconfig"
 
 HEADER_SEARCH_PATHS = $(inherited) "other"
 
