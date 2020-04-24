@@ -1,0 +1,9 @@
+[submodule "omlib-v3"]
+	path = omlib-v3
+	url = git@gitlab2.dev.omni-mad.org:omni-mad/omlib-v3.git
+[submodule "omgfx-v3"]
+	path = omgfx-v3
+	url = git@gitlab2.dev.omni-mad.org:omni-mad/omgfx-v3.git
+[submodule "omgame-v3"]
+	path = omgame-v3
+	url = git@gitlab2.dev.omni-mad.org:omni-mad/omgame-v3.git
