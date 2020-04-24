@@ -8,7 +8,7 @@ Manual: git pull ... don't clone // :TODO: fix
 
 ## Next steps
 - [ ] Update the README.md
-
+- [ ] Init, and Update the submodules ```git submodule update --init --recursive```
 
 ## Getting template updates
 
@@ -23,3 +23,8 @@ and rebase your branch on that
 ```git rebase template/master```
 
 Again, better know what you are doing, and be sure you actually want to do that!
+
+
+## Random :TODO:
+
+We are currently experimenting with xcodegen [https://github.com/yonaskolb/XcodeGen] to generate the project files.
