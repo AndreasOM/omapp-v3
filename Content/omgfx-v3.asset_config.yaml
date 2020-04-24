@@ -1,0 +1,12 @@
+tool:    "omt-atlas"
+command: "combine"
+# output:  "${input:basename}"
+output: "omgfx-v3-atlas-%d"
+input:
+  - "../omgfx-v3/resources/*.png"
+parameters: {
+  size: 2048,
+  border: 2,
+#  input: "${inputs}"
+}
+cmd_line: "${tool} ${} --output ${output} --size ${size} --border ${border} --input ${input}"
