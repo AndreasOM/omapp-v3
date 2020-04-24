@@ -9,4 +9,4 @@ parameters: {
   border: 2,
 #  input: "${inputs}"
 }
-cmd_line: "${tool} ${} --output ${output} --size ${size} --border ${border} --input ${input}"
+cmd_line: "${tool} ${command} --output ${data_directory}/${output} --size ${size} --border ${border} --input ${input}"
