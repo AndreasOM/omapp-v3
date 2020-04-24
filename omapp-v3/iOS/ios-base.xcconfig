@@ -1,0 +1,6 @@
+#include "omlib-v3/config/omlib-v3-Config.xcconfig"
+#include "omgfx-v3/config/omgfx-v3-Config.xcconfig"
+
+HEADER_SEARCH_PATHS = $(inherited) "other"
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) OM_PLATFORM_IOS=1
