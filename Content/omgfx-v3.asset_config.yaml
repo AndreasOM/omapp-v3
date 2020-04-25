@@ -10,3 +10,10 @@ parameters: {
 #  input: "${inputs}"
 }
 cmd_line: "${tool} ${command} --output ${data_directory}/${output} --size ${size} --border ${border} --input ${input}"
+---
+## default texture is also needed standalone!
+tool:    "$asset"
+command: "copy"
+output:  "${input}"
+input:
+  - "../omgfx-v3/resources/default_texture.png"
