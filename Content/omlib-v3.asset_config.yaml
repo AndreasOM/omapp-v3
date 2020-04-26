@@ -1,0 +1,7 @@
+tool:    "omt-shader"
+command: "build"
+output:  "${input:basename}"
+input:
+  - "../omlib-v3/resources/shaders/*.fsh"
+  - "../omlib-v3/resources/shaders/*.vsh"
+cmd_line: "${tool} ${command} --output ${data_directory}/${output} --input ${input}"

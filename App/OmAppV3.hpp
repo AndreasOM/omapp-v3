@@ -29,11 +29,16 @@ namespace OM
 		bool			setupFilesystem();
 		void			teardownFilesystem();
 		
+		bool			setupRenderer();
+		void			teardownRenderer();
+		
 		bool			addFilesystemLayerFromArchiveFile(Filesystem *pFilesystem, const char* pPakefilename);
 		bool			addFilesystemLayerFromDiskPath(const char* pPath);
 
 		LayeredFilesystem*		m_pLayeredFilesystem	= nullptr;
 		Renderer*				m_pRenderer				= nullptr;
+		
+		double					m_totalTime				= 0.0f;
 	};
 
 }
