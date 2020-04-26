@@ -1,0 +1,84 @@
+name: omapp-v3
+options:
+  bundleIdPrefix: net.omnimad
+  createIntermediateGroups: true
+  usesTabs: true
+  defaultConfig: Release
+  groupSortPosition: top
+  generateEmptyDirectories: true
+  deploymentTarget: "8.0"
+#  postGenCommand: pod install  # :TODO:
+configs:
+  Debug: debug
+  Release: release
+# packages:
+targets:
+  omapp-v3-iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "10.0"
+    info: 
+      path: omapp-v3/iOS/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIMainStoryboardFile: Main
+        UILaunchStoryboardName: LaunchScreen
+    sources:
+      - path: App/data
+        buildPhase: 
+          copyFiles:
+            destination: resources
+            subpath: data
+      - App
+#      - App/Config/base.xcconfig
+      - omapp-v3/iOS/ios-base.xcconfig
+      - omapp-v3/iOS/ios-debug.xcconfig
+      - omapp-v3/iOS/ios-release.xcconfig
+      - omapp-v3/iOS/main.m
+      - omapp-v3/iOS/AppDelegate.h
+      - omapp-v3/iOS/AppDelegate.mm
+      - omapp-v3/iOS/GameViewController.h
+      - omapp-v3/iOS/GameViewController.mm
+      - omapp-v3/iOS/Main.storyboard
+      - omapp-v3/iOS/LaunchScreen.storyboard
+
+## generic omlib-v3 here            # :TODO: find a way to include this from the submodule
+      - path: omlib-v3/include/shared
+        excludes:
+          - omlib_config.h.in
+      - path: omlib-v3/source/shared
+        excludes:
+          - base/empty.crc
+      - omlib-v3/include/apple
+      - omlib-v3/source/apple
+      - omlib-v3/include/ios
+      - path: omlib-v3/source/ios
+        excludes:
+          - tracking/**             # :TODO: make optional in a different way?
+          - ads/**                  # :TODO: make optional in a different way?
+      - omlib-v3/config
+      - path: omlib-v3/other/lua/src
+        excludes:
+          - luac.c
+          - lua.c
+## generic omgfx-v3 here            # :TODO: find a way to include this from the submodule
+      - omgfx-v3/config
+      - omgfx-v3/include/shared
+      - omgfx-v3/source/shared
+      - omgfx-v3/renderer/opengles
+
+## generic omgame-v3 here            # :TODO: find a way to include this from the submodule
+      - omgame-v3/config
+      - omgame-v3/include/shared
+      - omgame-v3/source/shared
+
+## generic other here                # :TODO: find a way to include this from the submodule
+      - other/other.xcconfig
+
+    configFiles:
+      Debug: omapp-v3/iOS/ios-debug.xcconfig
+      Release: omapp-v3/iOS/ios-release.xcconfig
+    dependencies:
+      - sdk: GameKit.framework
+      - sdk: GLKit.framework
+#      - sdk: coiiins/other/chipmunk/ios/libChipmunk-iOS.a
